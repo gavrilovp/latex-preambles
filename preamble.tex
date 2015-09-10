@@ -47,12 +47,6 @@
 
 \newcommand{\icode}[1]{\texttt{#1}} % inline code
 
-\makeatletter
-\let\thetitle\@title
-\let\theauthor\@author
-\let\thedate\@date
-\makeatother
-
 \lstset{
   numbers=left,
   numberstyle=\scriptsize,
@@ -70,6 +64,12 @@
 % \title{}
 % \author{}
 % \date{\today}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
 
 \begin{document}
 
