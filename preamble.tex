@@ -1,34 +1,39 @@
+% !TeX TS-program = XeLaTeX
+% check for outdated packages, syntax etc.
+\RequirePackage[l2tabu,orthodox]{nag}
+
 \documentclass[a4paper,12pt]{report}
 
 % polyglossia should go first!
 \usepackage{polyglossia} % multi-language support
-\setmainlanguage{russian}
-\setotherlanguage{english}
 
 \usepackage{amsmath} % math symbols, new environments and stuff
-\usepackage{unicode-math} % for changing math font and unicode symbols
+\usepackage{unicode-math} % changing math font and unicode symbols
 \usepackage[style=english]{csquotes} % fancy quoting
-\usepackage{microtype} % for better font rendering
-\usepackage{hyperref} % for refs and URLs
-\usepackage{graphicx} % for images (and title page)
-\usepackage{geometry} % for margins in title page
-\usepackage{tabu} % for tabulars (and title page)
-\usepackage[backend=bibtex, style=numeric-comp, sorting=none]{biblatex} % for bibliography
-\usepackage{placeins} % for float barriers
-\usepackage{titlesec} % for section break hooks
-\usepackage{listings} % for listings 
-\usepackage{upquote} % for good-looking quotes in source code (used for custom languages)
+\usepackage{microtype} % better font rendering
+\usepackage{hyperref} % refs and URLs
+\usepackage{graphicx} % images (and title page)
+\usepackage{geometry} % margins in title page
+\usepackage{tabu} % tabulars (and title page)
+\usepackage[backend=bibtex, style=numeric-comp, sorting=none]{biblatex} % bibliography
+\usepackage{placeins} % float barriers
+\usepackage{titlesec} % section break hooks
+\usepackage{listings} % listings
+\usepackage{upquote} % good-looking quotes in source code (used for custom languages)
 \usepackage{xcolor} % colors!
-\usepackage{enumitem} % for unboxed description labels (long ones)
-\usepackage{caption} % for captions
-\usepackage{tocloft} % for dots in TOC
-\usepackage{indentfirst} % for indentation after section
+\usepackage{enumitem} % unboxed description labels (long ones)
+\usepackage{caption} % captions
+\usepackage{tocloft} % dots in TOC
+\usepackage{indentfirst} % indentation after section
 
+\setmainlanguage{russian}
+\setotherlanguage{english}
 \defaultfontfeatures{Mapping=tex-text} % for converting "--" and "---"
 \setmainfont{CMU Serif}
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
-\setmathfont{XITS Math}
+\setmathfont{STIX Math}
+\DeclareSymbolFont{letters}{\encodingdefault}{\rmdefault}{m}{it} % for Russian in math
 \MakeOuterQuote{"} % enable auto-quotation
 
 % new page and barrier after section, also phantom section after clearpage for
@@ -42,10 +47,33 @@
 
 \newcommand{\icode}[1]{\texttt{#1}} % inline code
 
-\begin{document}
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+
+\lstset{
+  numbers=left,
+  numberstyle=\scriptsize,
+  basicstyle=\ttfamily\scriptsize,
+  columns=fullflexible,
+  keepspaces, % for spaces in unicode text!
+  captionpos=b % Russian standards, again
+}
 
 \renewcommand{\figurename}{Рисунок}
+\renewcommand{\lstlistingname}{Листинг}
+
+% \addglobalbib{document.bib}
+
+% \title{}
+% \author{}
+% \date{\today}
+
+\begin{document}
 
 % \tableofcontents
+
+% \printbibliography[heading=bibintoc]
 
 \end{document}
