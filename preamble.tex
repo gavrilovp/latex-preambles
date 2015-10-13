@@ -59,11 +59,12 @@
 \renewcommand{\figurename}{Рисунок}
 \renewcommand{\lstlistingname}{Листинг}
 
-% \addglobalbib{document.bib}
+% \addglobalbib{doc.bib}
 
-% \title{}
-% \author{}
-% \date{\today}
+% FIXME!
+\title{}
+\author{}
+\date{\today}
 
 \makeatletter
 \let\thetitle\@title
@@ -72,9 +73,5 @@
 \makeatother
 
 \begin{document}
-
-% \tableofcontents
-
-% \printbibliography[heading=bibintoc]
-
+\input{doc.tex}
 \end{document}
