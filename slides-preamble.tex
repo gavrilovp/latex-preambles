@@ -1,0 +1,44 @@
+% !TeX TS-program = XeLaTeX
+% check for outdated packages, syntax etc.
+\RequirePackage[l2tabu,orthodox]{nag}
+
+\documentclass{beamer}
+
+\usepackage{polyglossia} % multi-language support
+
+\usepackage{amsmath} % math symbols, new environments and stuff
+\usepackage{unicode-math} % changing math font and unicode symbols
+\usepackage[style=english]{csquotes} % fancy quoting
+\usepackage{microtype} % better font rendering
+\usepackage{hyperref} % refs and URLs
+\usepackage{graphicx} % images
+\usepackage{caption} % captions
+\usepackage{tabu} % tabulars
+\usepackage{tikz} % well, TiKZ
+
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\defaultfontfeatures{Mapping=tex-text} % for converting "--" and "---"
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\setmathfont{STIX Math}
+\DeclareSymbolFont{letters}{\encodingdefault}{\rmdefault}{m}{it} % for Russian in math
+\MakeOuterQuote{"} % enable auto-quotation
+
+\beamertemplatenavigationsymbolsempty % don't generate navigation symbols
+
+\setbeamerfont{page number in head/foot}{size=\large}
+\setbeamertemplate{footline}[frame number]
+
+\hypersetup{pdfstartview={Fit}}
+
+% FIXME!
+\title[]{}
+\subtitle{}
+\author{}
+\date{}
+
+\begin{document}
+\input{slides.tex}
+\end{document}
