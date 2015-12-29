@@ -1,5 +1,28 @@
+% !TeX TS-program = XeLaTeX
+% check for outdated packages, syntax etc.
+\RequirePackage[l2tabu,orthodox]{nag}
+
+\documentclass[a4paper,12pt]{report}
+
+\input{preamble.tex}
+
+% FIXME!
+% \title{}
+% \author{}
+% \date{\today}
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\begin{document}
+
 % \include{titlepage.tex}
 
 % \tableofcontents
 
 % \printbibliography[heading=bibintoc]
+
+\end{document}
