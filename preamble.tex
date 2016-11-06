@@ -9,7 +9,11 @@
 \usepackage{graphicx} % images (and title page)
 \usepackage[top=2cm, left=3cm, bottom=2cm, right=2cm]{geometry} % margins in title page
 \usepackage{tabu} % tabulars (and title page)
-\usepackage[backend=bibtex, style=numeric-comp, sorting=none]{biblatex} % bibliography
+\usepackage[
+  backend=biber,
+  style=gost-numeric,
+  sorting=none
+]{biblatex} % bibliography
 \usepackage{placeins} % float barriers
 \usepackage{titlesec} % section break hooks
 \usepackage{listings} % listings
@@ -31,16 +35,17 @@
 \setmainlanguage{russian}
 \setotherlanguage{english}
 \defaultfontfeatures{Mapping=tex-text} % for converting "--" and "---"
-\setmainfont{CMU Serif}
+\setmainfont{Times New Roman}
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
+\newfontfamily\cyrillicfont{Times New Roman}
 \DeclareSymbolFont{letters}{\encodingdefault}{\rmdefault}{m}{it} % for Russian in math
 \MakeOuterQuote{"} % enable auto-quotation
 
 % new page and barrier after section, also phantom section after clearpage for
 % hyperref to get right page.
 % clearpage also outputs all active floats:
-\newcommand{\sectionbreak}{\clearpage\phantomsection}
+% \newcommand{\sectionbreak}{\clearpage\phantomsection}
 \newcommand{\subsectionbreak}{\FloatBarrier}
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 \renewcommand{\thesection}{\arabic{section}} % no chapters
